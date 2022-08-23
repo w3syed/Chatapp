@@ -1,1 +1,78 @@
-<h1>Chatroom are noww! available</h1>
+
+
+  <!-- main page conent -->
+
+  <div class="text-center ">
+   <%= image_tag "capsule.png", :class => ' mt-5' , height:"100"%>
+   <h3>Say Something </h3>
+   <%= @current_user.username if logged_in? %>
+  </div>
+
+  <div class="container mt-5 ">
+    <div class="row">
+
+            <!---- Messages display section  -->
+
+      <div class="col-md-8 col-sm-12 text-white ">
+        <div class="card text-dark">
+          <div class="card-body pt-5 high">
+            <h3>Followers Activity</h3>
+
+          <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    <em><%= @messages.user %></em>: <% @messages %>
+                  </div>
+                </div>
+              </div>
+
+          
+            <div class=" justify-content-center">
+            <div class="chatbox  container">
+              <%#= form_for(@message,  url:message_path, :html => {:class => ' input-group inpt'})  do |f|  %>
+              <%#= f.text_field :body  %>
+            <!-- <input type="text" style="height:50px" class="form-control " placeholder="Enter a messages.." aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+            <div class="input-group-append">
+              <span class="input-group-text colr" id="basic-addon2"><a href="message"  >
+                <%#=  
+                '<i class=" fa fa-regular fa-paper-plane" id="elementID"></i>'.html_safe
+                %>
+                </a></span>
+            </div>
+          <%# end %>
+        </div>
+        </div>
+        </div>
+      </div>
+     </div> 
+
+        <!------- Nav for Items ---------->
+
+      <div class="col-md-4 col-sm-12 ">
+            <div class="card gap">
+            <div class="card-body high">
+              <div class="card">
+            <div class="card-header">
+              Home
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Messages</li>
+              <li class="list-group-item">Friends</li>
+            </ul>
+              </div>
+            </div>
+            </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+<footer class="bg-light text-center text-lg-start mt-5 bg-dark text-white">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white text-decoration-none" href="https://mdbootstrap.com/">SyedAdnanAli.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>

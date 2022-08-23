@@ -8,9 +8,61 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <!-- Header of the page -->
+
+  <div class="container-fluid bg-dark">
+    <div class="row">
+      <div class="col col-md-6 ">
+        <ul class="list-group list-group-horizontal mt-2 break justy">
+          <li class="list-group-item bg-dark "><a href="/" class="text-white text-decoration-none">Chatroom</a></li>
+          <li class="list-group-item bg-dark "><a href="#" class="text-white text-decoration-none">Messages</a></li>
+        </ul>
+      </div>
+      <div class="col col-md-6 ">
+        <ul class="list-group list-group-horizontal break f1 justy">
+          <li class="list-group-item nav-item dropdown bg-dark">
+            <a class="nav-link dropdown-toggle text-white bg-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+              
+              <% if logged_in? %>
+              <li>
+              <%= link_to "Log out",logout_path, :method => :delete, class:"dropdown-item" %> </li>
+             <!--  <li><a class="dropdown-item" href="logout_path">Log out</a></li> -->
+              <% else %>
+              <li><a class="dropdown-item" href="/login">Log in</a></li>
+              <% end %>
+            </ul>
+          </li>
+          <% if !logged_in? %>
+          <li><button type="button" class="mt-2 btn btn-primary"><span style="font-size:smaller;">Sign Up</span></button></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class= 'bg-dark'>
+    <%= render 'layouts/messages' %>
+    
+  </div>
     <%= yield %>
+
+    <!-- Footer of the page -->
+
+
+
+  
+    
   </body>
 </html>
