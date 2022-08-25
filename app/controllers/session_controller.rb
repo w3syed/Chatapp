@@ -1,9 +1,30 @@
 class SessionController < ApplicationController
 before_action :logged_in_redirect , only: [:new,:create]
 
+
 def new
 
 end
+
+	def newsignup
+
+	end
+
+	def signup
+		user_params =  {username: params[:username], password: params[:password]}
+		@user = User.new(user_params)
+		if @user.save
+		  create
+
+		flash[:success] = "You have successfully signup"
+		redirect_to login_path
+		else
+			flash[:error] = "There was something wrong with your login information"
+			binding.pry
+			redirect_to '/newsignup'
+		end
+	end
+
 
 def create
 		
@@ -44,6 +65,9 @@ end
 end
 
 
+def user_params
+  params.require(:user).permit(:username, :password)
+end
 
 end
 

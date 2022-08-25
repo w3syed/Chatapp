@@ -24,3 +24,15 @@ Things you may want to cover:
 * ...
 
 - new changes
+
+git command 
+
+
+git add .
+git commit -m "Messages"
+git push origin main
+git status
+
+
+
+ 

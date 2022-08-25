@@ -1,0 +1,24 @@
+<h4 class=" mt-5 text-center" >Welcome to ChatApp - a perfect messanger  ChatApp</h4>
+
+<div class="text-center mt-5 ">
+  <span class="">
+<i class="fa fa-thin fa-power-off rounded-circle" id="elementID2"></i>
+</span>
+</div>
+<h5 class="text-center mt-3">Signup in to continue</h5>
+
+<div class="container w-50 mt-5">
+<div class="card">
+  <div class="card-body">
+<%= form_with   url: '/sign'  do |form| %>
+
+  <%= form.label :query, "Name:", class:"form-label text-center" %><br>
+  <%= form.text_field :username , class:"form-control" ,placeholder: "Enter name" %>
+  <%= form.label :query, "Password:" , class:"form-label" %>
+  <%= form.text_field :password , class:"form-control", placeholder: "password"%>
+  <%= form.submit "Login" , class:"btn btn-primary text-center mt-3 colr "  %>
+
+<% end %>
+</div>
+</div>
+</div>

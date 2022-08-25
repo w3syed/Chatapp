@@ -4,8 +4,11 @@ before_action :require_user
 
 
 def index
-	# @message = Message.new
+	@message = Message.new
 	@messages = Message.all
 end
+
+
+
 
 end

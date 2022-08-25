@@ -27,8 +27,9 @@
 
 
 
-.htm{
-    background-color: green !important;
+.msg{
+    line-height: 10px;
+    margin-top: 20px;
 }
 
 
@@ -38,11 +39,23 @@
 
 
 
+@media only screen and (min-width: 765px) {
 
-
-
-
-
+.inpt{
+    margin-top: 15vh !important;
+    margin-left: -51px !important;
+    margin-right: -55px !important;
+}
+.marg{
+        width: 482px !important;
+    margin-left: -5px !important;
+}
+.fixe{
+    position: absolute;
+    margin-top: 365px;
+    margin-left: 10px;
+}
+}
 
 
 .justy{
@@ -59,6 +72,8 @@
 }
 .high{
     height: 59.8vh;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 @media only screen and (max-width: 765px) {
@@ -72,15 +87,26 @@
 #for{
     margin-top: 20px !important;
 }
+.fixe{
+    position: absolute;
+    margin-top: 365px;
+    margin-left: 10px;
+}
 }
 .inpt{
-    margin-top: 28vh;
+    margin-top: 20vh;
+    margin-left: -51px !important;
+    margin-right: -55px !important;
 }
+/*.marg{
+        width: 482px !important;
+    margin-left: -5px !important;
+}*/
 
 
-.colr{
+/*.colr{
     background-color: #FF7518 !important;
-}
+}*/
 
 .fa{
     height: 36px;
@@ -101,4 +127,6 @@
 
 #for{
     margin-top: -70px;
+}
+
 }
